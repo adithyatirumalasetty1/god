@@ -1493,6 +1493,48 @@
         margin: 5px !important;
     }
 }
+/* ===== FORCE MOBILE SCROLL ===== */
+@media screen and (max-width: 768px) {
+
+    html {
+        height: auto !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+    }
+
+    body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        position: relative !important;
+    }
+
+    /* Remove fixed screen height */
+    .container,
+    .main-container,
+    .content,
+    .card,
+    main,
+    section {
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+
+    /* Make sure buttons remain reachable */
+    button,
+    .buttons,
+    .button-container,
+    .navigation-buttons,
+    .nav-buttons {
+        position: relative !important;
+        z-index: 9999 !important;
+    }
+}
     </style>
 </head>
 
