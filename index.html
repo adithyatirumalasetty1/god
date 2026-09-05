@@ -1432,110 +1432,208 @@
                     auto !important;
             }
         }
-/* ===== MOBILE STORY BUTTON FIX ===== */
-@media screen and (max-width: 768px) {
 
-    html,
-    body {
-        width: 100%;
-        min-height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-        overflow-y: auto;
-    }
+/* ==========================================================
+   FINAL MOBILE FIX
+   - Page scrolls normally on phones
+   - Navigation buttons stay reachable
+   - No nested scrolling
+   - Prevents the flex body from trapping the page height
+========================================================== */
 
-    /* Prevent the main content from hiding the buttons */
-    .container,
-    .main-container,
-    .content,
-    .card {
-        height: auto !important;
-        min-height: 0 !important;
-        max-height: none !important;
-        overflow: visible !important;
-    }
-
-    /* Story/navigation buttons */
-    .buttons,
-    .button-container,
-    .navigation-buttons,
-    .nav-buttons,
-    .story-buttons {
-        position: relative !important;
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        flex-wrap: wrap !important;
-        gap: 12px !important;
-        width: 100% !important;
-        margin: 25px auto 40px !important;
-        padding: 10px !important;
-        box-sizing: border-box !important;
-        overflow: visible !important;
-        z-index: 999 !important;
-    }
-
-    .buttons button,
-    .button-container button,
-    .navigation-buttons button,
-    .nav-buttons button,
-    .story-buttons button,
-    button {
-        display: inline-flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: relative !important;
-        z-index: 1000 !important;
-        min-width: 50px !important;
-        min-height: 45px !important;
-        padding: 10px 18px !important;
-        margin: 5px !important;
-    }
-}
-/* ===== FORCE MOBILE SCROLL ===== */
 @media screen and (max-width: 768px) {
 
     html {
+        width: 100%;
         height: auto !important;
-        min-height: 100% !important;
+        min-height: 100%;
         overflow-x: hidden !important;
         overflow-y: auto !important;
+        scroll-behavior: smooth;
     }
 
     body {
+        width: 100%;
         height: auto !important;
         min-height: 100vh !important;
+        min-height: 100dvh !important;
+
+        /* IMPORTANT: do not use flex centering on mobile */
+        display: block !important;
+        position: relative !important;
+
+        margin: 0 !important;
+        padding: 12px !important;
+
         overflow-x: hidden !important;
         overflow-y: auto !important;
-        -webkit-overflow-scrolling: touch !important;
-        position: relative !important;
+
+        overscroll-behavior-x: none;
+        -webkit-overflow-scrolling: touch;
     }
 
-    /* Remove fixed screen height */
-    .container,
-    .main-container,
-    .content,
-    .card,
-    main,
-    section {
+    .container {
+        width: 100% !important;
+        max-width: 100% !important;
+
         height: auto !important;
         min-height: 0 !important;
         max-height: none !important;
+
+        margin: 0 auto !important;
+        padding: 0 !important;
+
+        overflow: visible !important;
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+
+        position: relative !important;
+        z-index: 2;
+    }
+
+    .card {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-height: none !important;
+
+        overflow: visible !important;
+
+        margin: 0 auto !important;
+        padding: 24px 18px 30px !important;
+    }
+
+    /* Keep all content inside the page flow */
+    .title-section,
+    .progress-container,
+    .story-image-container,
+    .wishes-section,
+    .story-content,
+    .latest-story,
+    .video-container,
+    .navigation {
+        position: relative !important;
+    }
+
+    /* Navigation buttons */
+    .navigation {
+        width: 100% !important;
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+        align-items: center !important;
+        gap: 8px !important;
+
+        margin: 24px 0 20px !important;
+        padding: 5px 0 !important;
+
+        overflow: visible !important;
+        z-index: 10 !important;
+    }
+
+    .nav-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        width: 100% !important;
+        min-width: 0 !important;
+        min-height: 44px !important;
+
+        padding: 10px 8px !important;
+        margin: 0 !important;
+
+        font-size: 13px !important;
+        white-space: nowrap !important;
+
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: relative !important;
+        z-index: 11 !important;
+
+        touch-action: manipulation;
+    }
+
+    .counter {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        min-width: 48px !important;
+        position: relative !important;
+        z-index: 11 !important;
+    }
+
+    .celebrate-btn {
+        position: relative !important;
+        z-index: 10 !important;
+    }
+
+    /* Make long text/images contribute to page height */
+    .story-text,
+    .wishes-section,
+    .latest-story {
         overflow: visible !important;
     }
 
-    /* Make sure buttons remain reachable */
-    button,
-    .buttons,
-    .button-container,
-    .navigation-buttons,
-    .nav-buttons {
-        position: relative !important;
-        z-index: 9999 !important;
+    .story-image-container {
+        overflow: hidden !important;
     }
 }
-    </style>
+
+/* Small phones */
+@media screen and (max-width: 480px) {
+
+    body {
+        padding: 7px !important;
+    }
+
+    .card {
+        padding: 18px 13px 28px !important;
+    }
+
+    .navigation {
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+        gap: 6px !important;
+        margin-top: 22px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .nav-btn {
+        min-height: 44px !important;
+        padding: 9px 5px !important;
+        font-size: 12px !important;
+    }
+
+    .counter {
+        min-width: 45px !important;
+        font-size: 13px !important;
+    }
+}
+
+/* Very small phones */
+@media screen and (max-width: 360px) {
+
+    body {
+        padding: 5px !important;
+    }
+
+    .card {
+        padding: 15px 10px 25px !important;
+    }
+
+    .nav-btn {
+        min-height: 44px !important;
+        padding: 8px 3px !important;
+        font-size: 11px !important;
+    }
+
+    .counter {
+        min-width: 42px !important;
+        font-size: 12px !important;
+    }
+}
+
+</style>
 </head>
 
 <body>
@@ -2214,6 +2312,7 @@
 
                 window.scrollTo({
                     top: 0,
+                    left: 0,
                     behavior: "smooth"
                 });
 
