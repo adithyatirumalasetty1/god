@@ -1,16 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>🐘 Ganesh Chaturthi Wishes & Stories 🐘</title>
 
     <style>
-
         /* =========================
            RESET
         ========================== */
@@ -21,30 +18,27 @@
             box-sizing: border-box;
         }
 
-
-        html,
-        body {
+        html {
             width: 100%;
             min-height: 100%;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
         }
 
-
-        /* =========================
-           BODY
-        ========================== */
-
         body {
-
+            width: 100%;
             min-height: 100vh;
+            min-height: 100dvh;
 
-            padding: 20px;
+            font-family:
+                "Segoe UI",
+                Tahoma,
+                Geneva,
+                Verdana,
+                sans-serif;
 
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
+            overflow-x: hidden;
+            overscroll-behavior-x: none;
 
             background:
                 linear-gradient(
@@ -57,40 +51,46 @@
                 );
 
             background-size: 400% 400%;
-
             background-position: center;
-
             background-repeat: no-repeat;
-
             background-attachment: fixed;
 
-            animation: gradientShift 15s ease infinite;
+            animation:
+                gradientShift 15s ease infinite;
 
             position: relative;
 
-            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 20px;
         }
 
-
-        /* Dark overlay */
+        /* =========================
+           DARK OVERLAY
+        ========================== */
 
         body::before {
-
             content: "";
 
             position: fixed;
 
             inset: 0;
 
-            background: rgba(0, 0, 0, 0.38);
+            background:
+                rgba(0, 0, 0, 0.38);
 
-            backdrop-filter: blur(3px);
+            backdrop-filter:
+                blur(3px);
+
+            -webkit-backdrop-filter:
+                blur(3px);
 
             pointer-events: none;
 
             z-index: 1;
         }
-
 
         /* =========================
            BACKGROUND ANIMATION
@@ -109,21 +109,19 @@
             100% {
                 background-position: 0% 50%;
             }
-
         }
-
 
         /* =========================
            FLOATING DIYAS
         ========================== */
 
         .diya {
-
             position: fixed;
 
             pointer-events: none;
 
-            animation: float 3s ease-in-out infinite;
+            animation:
+                float 3s ease-in-out infinite;
 
             opacity: 0.9;
 
@@ -133,10 +131,10 @@
 
             filter:
                 drop-shadow(
-                    0 0 8px rgba(255, 215, 0, 0.8)
+                    0 0 8px
+                    rgba(255, 215, 0, 0.8)
                 );
         }
-
 
         @keyframes float {
 
@@ -152,16 +150,13 @@
                     translateY(-20px)
                     rotate(5deg);
             }
-
         }
-
 
         /* =========================
            FALLING FLOWERS
         ========================== */
 
         .flower {
-
             position: fixed;
 
             pointer-events: none;
@@ -174,30 +169,28 @@
             opacity: 0.75;
 
             z-index: 4;
-        }
 
+            will-change:
+                transform,
+                opacity;
+        }
 
         @keyframes fall {
 
             to {
-
                 transform:
                     translateY(110vh)
                     rotate(360deg);
 
                 opacity: 0;
-
             }
-
         }
-
 
         /* =========================
            MAIN CONTAINER
         ========================== */
 
         .container {
-
             width: 100%;
 
             max-width: 900px;
@@ -214,19 +207,24 @@
             overflow-x: hidden;
 
             padding: 5px;
-        }
 
+            -webkit-overflow-scrolling: touch;
+        }
 
         /* =========================
            CARD
         ========================== */
 
         .card {
+            width: 100%;
 
             background:
                 rgba(255, 255, 255, 0.16);
 
             backdrop-filter:
+                blur(14px);
+
+            -webkit-backdrop-filter:
                 blur(14px);
 
             border-radius: 30px;
@@ -245,7 +243,6 @@
             animation:
                 cardGlow 3s ease-in-out infinite;
         }
-
 
         @keyframes cardGlow {
 
@@ -269,24 +266,19 @@
                     0 0 40px
                     rgba(255, 215, 0, 0.5);
             }
-
         }
-
 
         /* =========================
            TITLE
         ========================== */
 
         .title-section {
-
             text-align: center;
 
             margin-bottom: 20px;
         }
 
-
         .sacred-text {
-
             font-size: 18px;
 
             color: #ffd700;
@@ -302,9 +294,7 @@
             letter-spacing: 2px;
         }
 
-
         .main-title {
-
             font-size: 34px;
 
             color: #ffffff;
@@ -316,11 +306,11 @@
                 rgba(0, 0, 0, 0.5);
 
             margin-bottom: 5px;
+
+            line-height: 1.2;
         }
 
-
         .sub-title {
-
             font-size: 16px;
 
             color: #fff8dc;
@@ -330,13 +320,11 @@
                 rgba(0, 0, 0, 0.4);
         }
 
-
         /* =========================
            PROGRESS
         ========================== */
 
         .progress-container {
-
             width: 100%;
 
             height: 7px;
@@ -351,9 +339,7 @@
             overflow: hidden;
         }
 
-
         .progress-bar {
-
             height: 100%;
 
             background:
@@ -375,13 +361,11 @@
                 rgba(255, 215, 0, 0.8);
         }
 
-
         /* =========================
-           IMAGE CONTAINER
+           IMAGE
         ========================== */
 
         .story-image-container {
-
             width: 100%;
 
             height: 430px;
@@ -408,9 +392,7 @@
                 rgba(0, 0, 0, 0.45);
         }
 
-
         .story-image {
-
             width: 100%;
 
             height: 100%;
@@ -425,34 +407,32 @@
                 imageZoom 0.6s ease;
 
             border-radius: 18px;
-        }
 
+            max-width: 100%;
+        }
 
         @keyframes imageZoom {
 
             from {
-
-                transform: scale(0.95);
+                transform:
+                    scale(0.95);
 
                 opacity: 0;
             }
 
             to {
-
-                transform: scale(1);
+                transform:
+                    scale(1);
 
                 opacity: 1;
             }
-
         }
-
 
         /* =========================
            IMAGE FALLBACK
         ========================== */
 
         .image-fallback {
-
             position: absolute;
 
             inset: 0;
@@ -477,11 +457,11 @@
                 );
 
             text-align: center;
+
+            padding: 20px;
         }
 
-
         .image-fallback span {
-
             font-size: 18px;
 
             color: white;
@@ -489,15 +469,15 @@
             margin-top: 10px;
 
             text-align: center;
-        }
 
+            overflow-wrap: anywhere;
+        }
 
         /* =========================
            WISHES
         ========================== */
 
         .wishes-section {
-
             text-align: center;
 
             animation:
@@ -506,9 +486,7 @@
             padding: 10px 0;
         }
 
-
         .wishes-section h2 {
-
             font-size: 28px;
 
             color: #ffd700;
@@ -520,9 +498,7 @@
                 rgba(0, 0, 0, 0.4);
         }
 
-
         .wishes-section p {
-
             font-size: 17px;
 
             color: #ffffff;
@@ -536,9 +512,7 @@
             margin-bottom: 10px;
         }
 
-
         .blessing-text {
-
             font-size: 20px;
 
             color: #ffd700;
@@ -546,22 +520,18 @@
             font-weight: 600;
         }
 
-
         /* =========================
            STORY
         ========================== */
 
         .story-content {
-
             display: none;
 
             animation:
                 fadeIn 0.6s ease;
         }
 
-
         .story-part-title {
-
             font-size: 26px;
 
             color: #ffd700;
@@ -573,11 +543,11 @@
             text-shadow:
                 2px 2px 4px
                 rgba(0, 0, 0, 0.4);
+
+            line-height: 1.3;
         }
 
-
         .story-text {
-
             font-size: 16px;
 
             color: #ffffff;
@@ -589,13 +559,13 @@
             text-shadow:
                 1px 1px 2px
                 rgba(0, 0, 0, 0.4);
-        }
 
+            overflow-wrap: anywhere;
+        }
 
         @keyframes fadeIn {
 
             from {
-
                 opacity: 0;
 
                 transform:
@@ -603,22 +573,18 @@
             }
 
             to {
-
                 opacity: 1;
 
                 transform:
                     translateY(0);
             }
-
         }
-
 
         /* =========================
            LATEST STORY
         ========================== */
 
         .latest-story {
-
             display: none;
 
             text-align: center;
@@ -629,9 +595,7 @@
             padding: 10px 0;
         }
 
-
         .latest-story h2 {
-
             color: #ffd700;
 
             font-size: 28px;
@@ -643,9 +607,7 @@
                 rgba(0, 0, 0, 0.4);
         }
 
-
         .latest-story p {
-
             color: white;
 
             font-size: 16px;
@@ -655,13 +617,11 @@
             margin-bottom: 20px;
         }
 
-
         /* =========================
            VIDEO
         ========================== */
 
         .video-container {
-
             width: 100%;
 
             aspect-ratio: 16 / 9;
@@ -679,26 +639,26 @@
             background: #000;
         }
 
-
         .video-container video {
-
             width: 100%;
 
             height: 100%;
 
-            object-fit: cover;
+            object-fit: contain;
 
             display: block;
         }
-
 
         /* =========================
            WATCH BUTTON
         ========================== */
 
         .watch-btn {
+            display: inline-flex;
 
-            display: inline-block;
+            align-items: center;
+
+            justify-content: center;
 
             text-decoration: none;
 
@@ -714,6 +674,8 @@
 
             padding: 14px 28px;
 
+            min-height: 44px;
+
             border-radius: 30px;
 
             font-size: 16px;
@@ -728,9 +690,7 @@
                 all 0.3s ease;
         }
 
-
         .watch-btn:hover {
-
             transform:
                 translateY(-3px);
 
@@ -739,13 +699,11 @@
                 rgba(255, 107, 53, 0.6);
         }
 
-
         /* =========================
            CELEBRATE BUTTON
         ========================== */
 
         .celebrate-btn {
-
             background:
                 linear-gradient(
                     135deg,
@@ -787,11 +745,13 @@
             display: none;
 
             width: fit-content;
+
+            min-height: 44px;
+
+            touch-action: manipulation;
         }
 
-
         .celebrate-btn:hover {
-
             transform:
                 translateY(-3px);
 
@@ -800,13 +760,11 @@
                 rgba(255, 107, 53, 0.6);
         }
 
-
         /* =========================
            NAVIGATION
         ========================== */
 
         .navigation {
-
             display: flex;
 
             justify-content: space-between;
@@ -818,9 +776,7 @@
             gap: 15px;
         }
 
-
         .nav-btn {
-
             background:
                 rgba(255, 215, 0, 0.2);
 
@@ -849,16 +805,21 @@
             backdrop-filter:
                 blur(10px);
 
+            -webkit-backdrop-filter:
+                blur(10px);
+
             text-transform: uppercase;
 
             letter-spacing: 1px;
 
             min-width: 100px;
+
+            min-height: 44px;
+
+            touch-action: manipulation;
         }
 
-
         .nav-btn:hover {
-
             background:
                 rgba(255, 215, 0, 0.4);
 
@@ -870,9 +831,7 @@
                 rgba(255, 215, 0, 0.4);
         }
 
-
         .counter {
-
             font-size: 18px;
 
             color: #ffd700;
@@ -888,13 +847,11 @@
             text-align: center;
         }
 
-
         /* =========================
            CELEBRATION PARTICLES
         ========================== */
 
         .celebration-particle {
-
             position: fixed;
 
             pointer-events: none;
@@ -906,13 +863,15 @@
                 forwards;
 
             z-index: 20;
-        }
 
+            will-change:
+                transform,
+                opacity;
+        }
 
         @keyframes celebrateParticle {
 
             0% {
-
                 transform:
                     translate(0, 0)
                     scale(1)
@@ -922,7 +881,6 @@
             }
 
             100% {
-
                 transform:
                     translate(
                         var(--tx),
@@ -933,16 +891,13 @@
 
                 opacity: 0;
             }
-
         }
-
 
         /* =========================
            CELEBRATION MESSAGE
         ========================== */
 
         .celebration-message {
-
             position: fixed;
 
             left: 50%;
@@ -970,6 +925,8 @@
 
             z-index: 30;
 
+            width: min(90vw, 500px);
+
             box-shadow:
                 0 15px 50px
                 rgba(0, 0, 0, 0.5),
@@ -984,11 +941,9 @@
                 forwards;
         }
 
-
         @keyframes celebrationMessage {
 
             0% {
-
                 opacity: 0;
 
                 transform:
@@ -997,7 +952,6 @@
             }
 
             20% {
-
                 opacity: 1;
 
                 transform:
@@ -1006,254 +960,482 @@
             }
 
             40% {
-
                 transform:
                     translate(-50%, -50%)
                     scale(1);
             }
 
             80% {
-
                 opacity: 1;
             }
 
             100% {
-
                 opacity: 0;
 
                 transform:
                     translate(-50%, -50%)
                     scale(0.9);
             }
-
         }
-
 
         /* =========================
            SCROLLBAR
         ========================== */
 
         .container::-webkit-scrollbar {
-
             width: 6px;
         }
 
-
         .container::-webkit-scrollbar-track {
-
             background:
                 rgba(255, 255, 255, 0.1);
 
             border-radius: 10px;
         }
 
-
         .container::-webkit-scrollbar-thumb {
-
             background:
                 rgba(255, 215, 0, 0.5);
 
             border-radius: 10px;
         }
 
-
         /* =========================
-           RESPONSIVE
+           TABLET
         ========================== */
 
         @media (max-width: 768px) {
 
-            .card {
+            body {
+                padding: 12px;
 
-                padding:
-                    25px 20px;
+                min-height: 100dvh;
+
+                background-attachment: scroll;
+
+                animation: none;
+            }
+
+            body::before {
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+
+                background:
+                    rgba(0, 0, 0, 0.32);
+            }
+
+            .container {
+                width: 100%;
+
+                max-width: 100%;
+
+                max-height: none;
+
+                height: auto;
+
+                padding: 0;
+
+                overflow-x: hidden;
+
+                overflow-y: visible;
+
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .card {
+                padding: 24px 18px;
 
                 border-radius: 20px;
-            }
 
+                box-shadow:
+                    0 6px 20px
+                    rgba(0, 0, 0, 0.25);
+
+                animation: none;
+
+                backdrop-filter:
+                    blur(8px);
+
+                -webkit-backdrop-filter:
+                    blur(8px);
+            }
 
             .main-title {
+                font-size:
+                    clamp(
+                        24px,
+                        6vw,
+                        30px
+                    );
 
-                font-size: 28px;
+                line-height: 1.2;
             }
 
+            .sacred-text {
+                font-size: 15px;
+
+                letter-spacing: 1px;
+            }
+
+            .sub-title {
+                font-size: 14px;
+            }
 
             .story-image-container {
+                width: 100%;
 
-                height: 350px;
+                height:
+                    min(
+                        65vw,
+                        350px
+                    );
+
+                min-height: 220px;
+
+                margin-bottom: 18px;
+
+                border-radius: 16px;
             }
 
+            .story-image {
+                border-radius: 14px;
+
+                animation: none;
+            }
 
             .story-part-title {
+                font-size:
+                    clamp(
+                        19px,
+                        5vw,
+                        24px
+                    );
 
-                font-size: 22px;
+                line-height: 1.3;
             }
 
-
             .story-text {
+                font-size: 15px;
 
+                line-height: 1.65;
+
+                text-align: left;
+
+                overflow-wrap: anywhere;
+            }
+
+            .wishes-section h2 {
+                font-size:
+                    clamp(
+                        20px,
+                        5vw,
+                        26px
+                    );
+
+                line-height: 1.3;
+            }
+
+            .wishes-section p {
                 font-size: 15px;
 
                 line-height: 1.6;
             }
 
+            .blessing-text {
+                font-size: 17px;
+            }
 
             .navigation {
+                width: 100%;
 
-                flex-wrap: wrap;
+                display: grid;
 
-                justify-content: center;
+                grid-template-columns:
+                    1fr auto 1fr;
+
+                align-items: center;
+
+                gap: 8px;
+
+                margin-top: 20px;
             }
-
 
             .nav-btn {
+                width: 100%;
 
-                padding:
-                    10px 18px;
+                min-width: 0;
 
-                font-size: 14px;
+                padding: 11px 10px;
 
-                min-width: 80px;
+                font-size: 13px;
+
+                border-width: 1.5px;
+
+                white-space: nowrap;
             }
 
+            .counter {
+                min-width: 50px;
+
+                font-size: 14px;
+            }
+
+            .celebrate-btn {
+                width: 100%;
+
+                max-width: 300px;
+
+                padding: 12px 18px;
+
+                font-size: 14px;
+            }
+
+            .video-container {
+                border-radius: 14px;
+
+                box-shadow:
+                    0 6px 20px
+                    rgba(0, 0, 0, 0.35);
+            }
+
+            .video-container video {
+                object-fit: contain;
+            }
+
+            .watch-btn {
+                width: 100%;
+
+                max-width: 280px;
+
+                font-size: 14px;
+            }
+
+            .diya {
+                font-size: 20px;
+
+                filter: none;
+            }
+
+            .flower {
+                font-size: 18px;
+
+                filter: none;
+            }
+
+            .celebration-message {
+                width:
+                    min(
+                        85vw,
+                        360px
+                    );
+
+                padding: 20px;
+
+                font-size: 20px;
+
+                border-radius: 20px;
+            }
         }
 
+        /* =========================
+           SMALL PHONES
+        ========================== */
 
         @media (max-width: 480px) {
 
             body {
+                padding: 7px;
 
-                padding: 10px;
+                min-height: 100dvh;
+
+                background-attachment: scroll;
             }
-
 
             .card {
+                padding: 18px 13px;
 
-                padding:
-                    18px 14px;
+                border-radius: 16px;
 
-                border-radius: 15px;
+                border-width: 1px;
             }
 
+            .title-section {
+                margin-bottom: 16px;
+            }
 
             .main-title {
-
                 font-size: 22px;
-            }
 
+                line-height: 1.15;
+            }
 
             .sacred-text {
+                font-size: 13px;
 
-                font-size: 14px;
+                letter-spacing: 0.5px;
             }
-
 
             .sub-title {
-
-                font-size: 14px;
+                font-size: 13px;
             }
-
 
             .story-image-container {
+                height: 60vw;
 
-                height: 280px;
+                min-height: 210px;
+
+                max-height: 290px;
+
+                border-radius: 14px;
             }
-
 
             .story-part-title {
-
                 font-size: 18px;
-            }
 
+                margin-bottom: 12px;
+            }
 
             .story-text {
-
                 font-size: 14px;
 
-                line-height: 1.5;
+                line-height: 1.6;
             }
 
-
             .wishes-section h2 {
-
                 font-size: 20px;
             }
 
-
             .wishes-section p {
+                font-size: 14px;
 
-                font-size: 15px;
+                line-height: 1.55;
             }
-
 
             .blessing-text {
-
-                font-size: 17px;
+                font-size: 16px;
             }
 
+            .navigation {
+                grid-template-columns:
+                    1fr auto 1fr;
+
+                gap: 6px;
+            }
 
             .nav-btn {
-
-                padding:
-                    8px 14px;
+                padding: 9px 6px;
 
                 font-size: 12px;
 
-                min-width: 60px;
+                min-height: 42px;
             }
-
 
             .counter {
+                font-size: 13px;
 
-                font-size: 14px;
-
-                min-width: 60px;
+                min-width: 45px;
             }
-
 
             .celebrate-btn {
+                max-width: 260px;
 
-                padding:
-                    10px 24px;
+                padding: 11px 15px;
 
-                font-size: 14px;
+                font-size: 13px;
             }
 
+            .latest-story h2 {
+                font-size: 21px;
+            }
+
+            .latest-story p {
+                font-size: 14px;
+
+                line-height: 1.6;
+            }
 
             .diya {
-
-                font-size: 20px;
-            }
-
-
-            .flower {
-
                 font-size: 18px;
             }
 
-
-            .latest-story h2 {
-
-                font-size: 22px;
+            .flower {
+                font-size: 16px;
             }
 
-
             .celebration-message {
+                width: 88vw;
 
-                width: 85%;
+                font-size: 18px;
 
+                padding: 18px;
+            }
+        }
+
+        /* =========================
+           VERY SMALL PHONES
+        ========================== */
+
+        @media (max-width: 360px) {
+
+            body {
+                padding: 5px;
+            }
+
+            .card {
+                padding: 15px 10px;
+            }
+
+            .main-title {
                 font-size: 20px;
             }
 
+            .story-image-container {
+                height: 58vw;
+
+                min-height: 190px;
+            }
+
+            .story-text {
+                font-size: 13px;
+            }
+
+            .nav-btn {
+                font-size: 11px;
+
+                padding: 8px 4px;
+            }
+
+            .counter {
+                font-size: 12px;
+            }
         }
 
-    </style>
+        /* =========================
+           REDUCE MOTION
+        ========================== */
 
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration:
+                    0.01ms !important;
+
+                animation-iteration-count:
+                    1 !important;
+
+                transition-duration:
+                    0.01ms !important;
+
+                scroll-behavior:
+                    auto !important;
+            }
+        }
+    </style>
 </head>
 
-
 <body>
-
 
     <!-- =========================
          MAIN CONTAINER
@@ -1263,33 +1445,23 @@
 
         <div class="card">
 
-
             <!-- TITLE -->
 
             <div class="title-section">
 
                 <div class="sacred-text">
-
                     🙏 ॐ श्री गणेशाय नमः ॐ 🙏
-
                 </div>
 
-
                 <h1 class="main-title">
-
                     HAPPY GANESH CHATURTHI
-
                 </h1>
 
-
                 <div class="sub-title">
-
                     ✨ Wishes & Stories ✨
-
                 </div>
 
             </div>
-
 
             <!-- PROGRESS -->
 
@@ -1301,7 +1473,6 @@
                 </div>
 
             </div>
-
 
             <!-- IMAGE -->
 
@@ -1317,7 +1488,6 @@
 
             </div>
 
-
             <!-- HOME WISHES -->
 
             <div
@@ -1325,25 +1495,17 @@
                 id="wishesSection">
 
                 <h2>
-
                     🙏 గణపతి బప్పా మోరియా 🙏
-
                 </h2>
 
-
                 <p>
-
                     May Lord Ganesha bless you and your family with
                     <br>
 
                     <span class="blessing-text">
-
                         Happiness, Peace, Prosperity, and Success
-
                     </span>
-
                 </p>
-
 
                 <p
                     style="
@@ -1359,7 +1521,6 @@
 
             </div>
 
-
             <!-- STORY CONTENT -->
 
             <div
@@ -1371,14 +1532,12 @@
                     id="storyTitle">
                 </h2>
 
-
                 <p
                     class="story-text"
                     id="storyText">
                 </p>
 
             </div>
-
 
             <!-- LATEST STORY -->
 
@@ -1387,19 +1546,13 @@
                 id="latestStory">
 
                 <h2>
-
                     🙏 Latest Ganesh Story 🙏
-
                 </h2>
 
-
                 <p>
-
                     Watch this devotional story of Lord Ganesha
                     and enjoy the divine story with your family.
-
                 </p>
-
 
                 <!-- LOCAL VIDEO -->
 
@@ -1421,7 +1574,6 @@
 
                 </div>
 
-
                 <a
                     class="watch-btn"
                     href="https://www.youtube.com/"
@@ -1434,7 +1586,6 @@
 
             </div>
 
-
             <!-- CELEBRATE -->
 
             <button
@@ -1445,7 +1596,6 @@
                 🎉 Celebrate Ganesh Chaturthi
 
             </button>
-
 
             <!-- NAVIGATION -->
 
@@ -1460,25 +1610,19 @@
 
                 </button>
 
-
                 <div class="counter">
 
                     <span id="currentPart">
-
                         0
-
                     </span>
 
                     /
 
                     <span id="totalParts">
-
                         5
-
                     </span>
 
                 </div>
-
 
                 <button
                     class="nav-btn"
@@ -1491,28 +1635,18 @@
 
             </div>
 
-
         </div>
 
     </div>
-
 
     <script>
 
         /* ==========================================================
            IMAGE FILES
-
-           0.jpg = HOME
-           1.jpg = STORY 1
-           2.jpg = STORY 2
-           3.jpg = STORY 3
-           4.jpg = STORY 4
-           5.jpg = STORY 5
         ========================================================== */
 
         const homeImage =
             "images/0.jpg";
-
 
         const ganeshImages = [
 
@@ -1536,57 +1670,43 @@
         const stories = [
 
             {
-
                 title:
                     "🌺 Part 1 — The Birth of Ganesha",
 
                 text:
                     "In ancient times, Goddess Parvati, the divine consort of Lord Shiva, wished to have a son. Pleased with her devotion, she created a beautiful child using her divine powers. She named him Ganesha and asked him to guard the entrance while she bathed. One day, Lord Shiva returned and found a young boy blocking his entrance. Shiva did not know that Ganesha was his son. A conflict followed, and Shiva severed Ganesha's head. Parvati was heartbroken and demanded that Ganesha be brought back to life. To make amends, Shiva ordered his followers to bring the head of the first living being they encountered. They returned with an elephant's head. Shiva placed it on Ganesha's body and restored him to life. Thus, Ganesha received his elephant head and became the beloved remover of obstacles."
-
             },
 
-
             {
-
                 title:
                     "🌙 Part 2 — Ganesha and the Moon",
 
                 text:
                     "One evening, Lord Ganesha was returning home after eating many delicious modaks. He was riding on his tiny mouse, Mooshak. The Moon saw Ganesha and laughed at his appearance. Ganesha became angry because the Moon had mocked him. He cursed the Moon and declared that anyone who looked at the Moon on that particular day would face false accusations and embarrassment. The Moon became frightened and sincerely apologized. Ganesha forgave him and reduced the severity of the curse. This story reminds us that we should never make fun of others because of their appearance, and that humility and respect are important qualities."
-
             },
 
-
             {
-
                 title:
                     "🏃 Part 3 — Ganesha and Kartikeya's Race",
 
                 text:
                     "Once, Lord Shiva and Goddess Parvati decided to test their two sons, Ganesha and Kartikeya. They announced that whoever travelled around the entire universe first would receive a special blessing. Kartikeya immediately mounted his magnificent peacock and travelled around the world at great speed. Ganesha knew that he could not compete physically with his brother. Instead, he walked around his parents three times with devotion. When Shiva and Parvati asked him why he had done this, Ganesha replied that his parents were his entire universe. Shiva and Parvati were delighted by his wisdom and devotion and declared Ganesha the winner. The story teaches that wisdom can be more powerful than physical strength."
-
             },
 
-
             {
-
                 title:
                     "📚 Part 4 — Ganesha and the Mahabharata",
 
                 text:
                     "Sage Vyasa wanted to record the great epic Mahabharata and needed a powerful and intelligent scribe. He approached Lord Ganesha and requested his help. Ganesha agreed, but he placed one condition: Vyasa must continue reciting without stopping. Vyasa accepted but added his own condition: Ganesha must understand every verse before writing it. This required both of them to remain completely focused. Whenever Vyasa recited a particularly complicated verse, Ganesha had to think carefully before writing it, giving Vyasa time to compose the next section. Their cooperation resulted in the recording of one of India's greatest epics. The story teaches us the importance of concentration, patience, knowledge and perseverance."
-
             },
 
-
             {
-
                 title:
                     "🐀 Part 5 — Ganesha and His Mouse",
 
                 text:
                     "Lord Ganesha's vehicle is a tiny mouse called Mooshak. Many people wonder why a powerful deity with an elephant's head rides such a small creature. The mouse is often understood symbolically as representing desires, restlessness and ego. Just as a mouse can quietly enter small spaces and cause damage, uncontrolled desires can quietly disturb our lives. By sitting upon the mouse, Ganesha represents wisdom controlling desires and ego. The relationship between Ganesha and Mooshak teaches us that true strength is not only physical power. It is the ability to control our thoughts, desires and fears through wisdom and understanding."
-
             }
 
         ];
@@ -1660,81 +1780,59 @@
                     ".image-fallback"
                 );
 
-
             if (oldFallback) {
-
                 oldFallback.remove();
-
             }
 
+            imgEl.style.display = "none";
 
-            imgEl.style.display =
-                "none";
+            imgEl.onload = function () {
 
+                imgEl.style.display = "block";
 
-            imgEl.onload =
-                function () {
+            };
 
-                    imgEl.style.display =
-                        "block";
+            imgEl.onerror = function () {
 
-                };
+                console.log(
+                    "Image not found:",
+                    imagePath
+                );
 
+                imgEl.style.display = "none";
 
-            imgEl.onerror =
-                function () {
+                const fallbackDiv =
+                    document.createElement("div");
 
-                    console.log(
-                        "Image not found:",
-                        imagePath
-                    );
+                fallbackDiv.className =
+                    "image-fallback";
 
+                fallbackDiv.innerHTML = `
 
-                    imgEl.style.display =
-                        "none";
+                    🐘
 
+                    <span>
 
-                    const fallbackDiv =
-                        document.createElement(
-                            "div"
-                        );
+                        🙏 Ganapati Bappa Moraya 🙏
 
+                        <br><br>
 
-                    fallbackDiv.className =
-                        "image-fallback";
+                        Image not found:
 
+                        <br>
 
-                    fallbackDiv.innerHTML = `
+                        ${imagePath}
 
-                        🐘
+                    </span>
 
-                        <span>
+                `;
 
-                            🙏 Ganapati Bappa Moraya 🙏
+                imageContainer.appendChild(
+                    fallbackDiv
+                );
+            };
 
-                            <br><br>
-
-                            Image not found:
-
-                            <br>
-
-                            ${imagePath}
-
-                        </span>
-
-                    `;
-
-
-                    imageContainer.appendChild(
-                        fallbackDiv
-                    );
-
-                };
-
-
-            imgEl.src =
-                imagePath;
-
+            imgEl.src = imagePath;
         }
 
 
@@ -1742,13 +1840,10 @@
            CHANGE BACKGROUND
         ========================================================== */
 
-        function changeBackground(
-            imagePath
-        ) {
+        function changeBackground(imagePath) {
 
             const testImage =
                 new Image();
-
 
             testImage.onload =
                 function () {
@@ -1762,20 +1857,20 @@
                         url("${imagePath}")
                         `;
 
-
                     document.body.style.backgroundSize =
                         "cover";
-
 
                     document.body.style.backgroundPosition =
                         "center";
 
+                    /* IMPORTANT FOR MOBILE */
 
                     document.body.style.backgroundAttachment =
-                        "fixed";
+                        window.innerWidth <= 768
+                            ? "scroll"
+                            : "fixed";
 
                 };
-
 
             testImage.onerror =
                 function () {
@@ -1785,10 +1880,8 @@
 
                 };
 
-
             testImage.src =
                 imagePath;
-
         }
 
 
@@ -1798,61 +1891,46 @@
 
         function showWishes() {
 
-            currentIndex =
-                -1;
-
+            currentIndex = -1;
 
             wishesSection.style.display =
                 "block";
 
-
             storyContent.style.display =
                 "none";
-
 
             latestStory.style.display =
                 "none";
 
-
             celebrateBtn.style.display =
                 "none";
-
 
             progressBar.style.width =
                 "0%";
 
-
             currentPart.textContent =
                 "0";
 
-
             totalParts.textContent =
                 totalStories;
-
 
             loadImage(
                 homeImage
             );
 
-
             changeBackground(
                 homeImage
             );
 
-
             prevBtn.textContent =
                 "◀ Prev";
-
 
             nextBtn.textContent =
                 "Next ▶";
 
-
             stopVideo();
 
-
             scrollToTop();
-
         }
 
 
@@ -1866,70 +1944,53 @@
                 index < 0 ||
                 index >= totalStories
             ) {
-
                 return;
-
             }
-
 
             currentIndex =
                 index;
 
-
             const story =
                 stories[index];
-
 
             wishesSection.style.display =
                 "none";
 
-
             storyContent.style.display =
                 "block";
-
 
             latestStory.style.display =
                 "none";
 
-
             celebrateBtn.style.display =
                 "block";
-
 
             storyTitle.textContent =
                 story.title;
 
-
             storyText.textContent =
                 story.text;
-
 
             const progress =
                 ((index + 1) /
                 totalStories) * 100;
 
-
             progressBar.style.width =
                 progress + "%";
-
 
             currentPart.textContent =
                 index + 1;
 
-
             totalParts.textContent =
                 totalStories;
-
 
             loadImage(
                 ganeshImages[index]
             );
 
-
             changeBackground(
                 ganeshImages[index]
             );
-
 
             if (
                 index ===
@@ -1943,19 +2004,14 @@
 
                 nextBtn.textContent =
                     "Next ▶";
-
             }
-
 
             prevBtn.textContent =
                 "◀ Prev";
 
-
             stopVideo();
 
-
             scrollToTop();
-
         }
 
 
@@ -1968,42 +2024,32 @@
             currentIndex =
                 totalStories;
 
-
             wishesSection.style.display =
                 "none";
-
 
             storyContent.style.display =
                 "none";
 
-
             latestStory.style.display =
                 "block";
-
 
             celebrateBtn.style.display =
                 "none";
 
-
             progressBar.style.width =
                 "100%";
-
 
             currentPart.textContent =
                 "6";
 
-
             totalParts.textContent =
                 "6";
-
 
             nextBtn.textContent =
                 "🏠 Home";
 
-
             prevBtn.textContent =
                 "◀ Story 5";
-
 
             changeBackground(
                 ganeshImages[
@@ -2011,19 +2057,15 @@
                 ]
             );
 
-
             loadImage(
                 ganeshImages[
                     totalStories - 1
                 ]
             );
 
-
             stopVideo();
 
-
             scrollToTop();
-
         }
 
 
@@ -2037,11 +2079,9 @@
                 return;
             }
 
-
             ganeshVideo.pause();
 
             ganeshVideo.currentTime = 0;
-
         }
 
 
@@ -2051,16 +2091,39 @@
 
         function scrollToTop() {
 
-            document
-                .querySelector(".container")
-                .scrollTo({
+            const container =
+                document.querySelector(
+                    ".container"
+                );
+
+            if (!container) {
+                return;
+            }
+
+            /*
+             * On mobile the page itself
+             * handles scrolling.
+             */
+
+            if (
+                window.innerWidth <= 768
+            ) {
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            } else {
+
+                container.scrollTo({
 
                     top: 0,
 
                     behavior: "smooth"
 
                 });
-
+            }
         }
 
 
@@ -2101,9 +2164,7 @@
                 showStory(
                     currentIndex + 1
                 );
-
             }
-
         }
 
 
@@ -2146,9 +2207,7 @@
                 showStory(
                     currentIndex - 1
                 );
-
             }
-
         }
 
 
@@ -2163,10 +2222,8 @@
                     "div"
                 );
 
-
             message.className =
                 "celebration-message";
-
 
             message.innerHTML = `
 
@@ -2175,24 +2232,18 @@
                 <br>
 
                 <small>
-
                     Happy Ganesh Chaturthi!
-
                 </small>
 
             `;
-
 
             document.body.appendChild(
                 message
             );
 
-
             setTimeout(
                 () => {
-
                     message.remove();
-
                 },
                 2700
             );
@@ -2218,9 +2269,22 @@
             ];
 
 
+            /*
+             * Fewer particles on mobile
+             * for smoother performance.
+             */
+
+            const particleCount =
+                window.innerWidth <= 480
+                    ? 30
+                    : window.innerWidth <= 768
+                        ? 45
+                        : 80;
+
+
             for (
                 let i = 0;
-                i < 80;
+                i < particleCount;
                 i++
             ) {
 
@@ -2232,10 +2296,8 @@
                                 "div"
                             );
 
-
                         particle.className =
                             "celebration-particle";
-
 
                         particle.textContent =
                             particles[
@@ -2245,67 +2307,62 @@
                                 )
                             ];
 
-
                         particle.style.left =
                             Math.random() *
                             window.innerWidth +
                             "px";
 
-
                         particle.style.top =
                             window.innerHeight / 2 +
                             "px";
 
-
                         particle.style.fontSize =
                             20 +
-                            Math.random() * 35 +
+                            Math.random() * 25 +
                             "px";
-
 
                         const tx =
                             (Math.random() - 0.5) *
-                            900;
-
+                            (
+                                window.innerWidth <= 480
+                                    ? 450
+                                    : 900
+                            );
 
                         const ty =
-                            -450 -
+                            -300 -
                             Math.random() *
                             450;
-
 
                         particle.style.setProperty(
                             "--tx",
                             tx + "px"
                         );
 
-
                         particle.style.setProperty(
                             "--ty",
                             ty + "px"
                         );
 
-
                         document.body.appendChild(
                             particle
                         );
 
-
                         setTimeout(
                             () => {
-
                                 particle.remove();
-
                             },
                             2700
                         );
 
                     },
-                    i * 35
+                    i * (
+                        window.innerWidth <= 480
+                            ? 45
+                            : 35
+                    )
                 );
-
             }
-
         }
 
 
@@ -2355,7 +2412,6 @@
 
             ];
 
-
             positions.forEach(
                 pos => {
 
@@ -2364,40 +2420,34 @@
                             "div"
                         );
 
-
                     diya.className =
                         "diya";
-
 
                     diya.textContent =
                         "🪔";
 
-
                     diya.style.top =
                         pos.top;
-
 
                     diya.style.left =
                         pos.left;
 
-
                     diya.style.animationDelay =
                         pos.delay;
-
 
                     document.body.appendChild(
                         diya
                     );
-
                 }
             );
-
         }
 
 
         /* ==========================================================
            FALLING FLOWERS
         ========================================================== */
+
+        let flowerInterval = null;
 
         function createFallingFlowers() {
 
@@ -2421,10 +2471,8 @@
                         "div"
                     );
 
-
                 flower.className =
                     "flower";
-
 
                 flower.textContent =
                     flowers[
@@ -2434,27 +2482,22 @@
                         )
                     ];
 
-
                 flower.style.left =
                     Math.random() *
                     window.innerWidth +
                     "px";
 
-
                 flower.style.top =
                     "-50px";
 
-
                 flower.style.animationDuration =
-                    6 +
-                    Math.random() * 6 +
+                    7 +
+                    Math.random() * 5 +
                     "s";
-
 
                 document.body.appendChild(
                     flower
                 );
-
 
                 setTimeout(
                     () => {
@@ -2462,17 +2505,38 @@
                         flower.remove();
 
                     },
-                    14000
+                    13000
                 );
-
             }
 
 
-            setInterval(
-                createFlower,
-                700
-            );
+            /* Prevent duplicate intervals */
 
+            if (flowerInterval) {
+
+                clearInterval(
+                    flowerInterval
+                );
+            }
+
+
+            /*
+             * Mobile gets fewer flowers.
+             */
+
+            const interval =
+                window.innerWidth <= 480
+                    ? 1400
+                    : window.innerWidth <= 768
+                        ? 1100
+                        : 900;
+
+
+            flowerInterval =
+                setInterval(
+                    createFlower,
+                    interval
+                );
         }
 
 
@@ -2499,9 +2563,53 @@
                 ) {
 
                     previousStory();
-
                 }
 
+            }
+        );
+
+
+        /* ==========================================================
+           RESIZE
+        ========================================================== */
+
+        let resizeTimer;
+
+        window.addEventListener(
+            "resize",
+            function() {
+
+                clearTimeout(
+                    resizeTimer
+                );
+
+                resizeTimer =
+                    setTimeout(
+                        () => {
+
+                            if (
+                                currentIndex >= 0 &&
+                                currentIndex < totalStories
+                            ) {
+
+                                changeBackground(
+                                    ganeshImages[
+                                        currentIndex
+                                    ]
+                                );
+
+                            }
+                            else {
+
+                                changeBackground(
+                                    homeImage
+                                );
+
+                            }
+
+                        },
+                        250
+                    );
             }
         );
 
@@ -2531,4 +2639,3 @@
 </body>
 
 </html>
-```
